@@ -42,7 +42,7 @@ public class RegularReplace
 
 		sr.Dispose();
 		sr.Close();
-		File.WriteAllLines(absPath, str_list.ToArray(), System.Text.Encoding.UTF8);
+		File.WriteAllLines(absPath, str_list.ToArray(), new UTF8Encoding(false));//no bom
 	}
 
 	private static string AddFunc(string line, Match m)
