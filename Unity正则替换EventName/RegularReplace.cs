@@ -96,6 +96,7 @@ public class RegularReplace
 					if (splits.Length > 0)
 					{
 						string eventName = splits[0].Replace("(", "");
+						eventName = eventName.Trim();
 						if (eventName.Contains("\""))
 						{
 							eventName = eventName.Replace("\"", "");
@@ -121,8 +122,8 @@ public class RegularReplace
 	private static void DoRegularReplace()
 	{
 		GetEventNames();
-
-		string absPath = @"E:\p3_client\client\Assets\StreamingAssets\Script\lua\Script\EventName.lua";
+		
+		string absPath = Application.dataPath + @"\StreamingAssets\Script\lua\Script\EventName.lua";
 		StreamReader sr = new StreamReader(absPath);
 		List<string> str_list = new List<string>();
 
